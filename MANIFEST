@@ -12,6 +12,8 @@ dist.ini
 lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm
 t/00-report-prereqs.t
 t/01-basic.t
+t/02-no-distini.t
+t/03-repeat-prompt.t
 weaver.ini
 xt/author/00-compile.t
 xt/author/pod-spell.t

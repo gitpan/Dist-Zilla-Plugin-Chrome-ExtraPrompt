@@ -34,10 +34,10 @@ no_index:
 provides:
   Dist::Zilla::Plugin::Chrome::ExtraPrompt:
     file: lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm
-    version: 0.001
+    version: 0.002
   Dist::Zilla::Role::Chrome::ExtraPrompt:
     file: lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm
-    version: 0.001
+    version: 0.002
 requires:
   Dist::Zilla::Chrome::Term: 0
   Dist::Zilla::Role::Plugin: 0
@@ -53,7 +53,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-Chrome-ExtraPrompt
   homepage: https://github.com/karenetheridge/Dist-Zilla-Plugin-Chrome-ExtraPrompt
   repository: https://github.com/karenetheridge/Dist-Zilla-Plugin-Chrome-ExtraPrompt.git
-version: 0.001
+version: 0.002
 x_Dist_Zilla:
   perl:
     version: 5.019004
@@ -61,7 +61,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::ETHER/Git::NextVersion'
-      version: 2.014
+      version: 2.016
     -
       class: Dist::Zilla::Plugin::PromptIfStale
       name: '@Author::ETHER/build'
@@ -85,7 +85,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       name: '@Author::ETHER/Git::GatherDir'
-      version: 2.014
+      version: 2.016
     -
       class: Dist::Zilla::Plugin::MetaYAML
       name: '@Author::ETHER/MetaYAML'
@@ -316,7 +316,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: '@Author::ETHER/Git::Check'
-      version: 2.014
+      version: 2.016
     -
       class: Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts
       name: '@Author::ETHER/Git::CheckFor::MergeConflicts'
@@ -344,11 +344,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: '@Author::ETHER/Git::Commit'
-      version: 2.014
+      version: 2.016
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::ETHER/Git::Tag'
-      version: 2.014
+      version: 2.016
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ETHER/GitHub::Update'
@@ -356,7 +356,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Push
       name: '@Author::ETHER/Git::Push'
-      version: 2.014
+      version: 2.016
     -
       class: Dist::Zilla::Plugin::InstallRelease
       name: '@Author::ETHER/InstallRelease'

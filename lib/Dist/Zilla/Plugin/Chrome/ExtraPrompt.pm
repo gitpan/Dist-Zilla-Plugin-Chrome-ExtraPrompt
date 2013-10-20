@@ -5,9 +5,9 @@ BEGIN {
   $Dist::Zilla::Plugin::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
 {
-  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.001';
+  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.002';
 }
-# git description: 766088c
+# git description: v0.001-3-gd235b22
 
 # ABSTRACT: Perform arbitrary commands when Dist::Zilla prompts you
 # vim: set ts=8 sw=4 tw=78 et :
@@ -63,9 +63,9 @@ BEGIN {
   $Dist::Zilla::Role::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
 {
-  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.001';
+  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.002';
 }
-# git description: 766088c
+# git description: v0.001-3-gd235b22
 
 use Moose::Role;
 use IPC::Open2;
@@ -93,7 +93,7 @@ around [qw(prompt_str prompt_yn)] => sub {
     open(my $out, '>', File::Spec->devnull);
 
     my $command = $self->command;
-    $command .= ' ' . $_[0] if $self->repeat_prompt;
+    $command .= ' ' . "'" . $_[0] . "'" if $self->repeat_prompt;
 
     my $pid = open2($out, $in, $command);
 
@@ -109,7 +109,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =for :stopwords Karen Etheridge irc
 
@@ -119,7 +119,7 @@ Dist::Zilla::Plugin::Chrome::ExtraPrompt - Perform arbitrary commands when Dist:
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -146,7 +146,8 @@ audio prompt to bring me back to this screen session.
 required.
 
 =item * C<repeat_prompt>: a boolean flag (defaulting to false) that, when set,
-appends the prompt string to the command and arguments that are called.
+appends the prompt string to the command and arguments that are called,
+passing as a single (additional?) argument.
 
 =back
 
