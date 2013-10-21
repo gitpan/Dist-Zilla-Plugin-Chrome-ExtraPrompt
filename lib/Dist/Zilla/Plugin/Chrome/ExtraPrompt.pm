@@ -5,9 +5,9 @@ BEGIN {
   $Dist::Zilla::Plugin::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
 {
-  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.002';
+  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.003';
 }
-# git description: v0.001-3-gd235b22
+# git description: v0.002-2-g91a04e5
 
 # ABSTRACT: Perform arbitrary commands when Dist::Zilla prompts you
 # vim: set ts=8 sw=4 tw=78 et :
@@ -63,9 +63,9 @@ BEGIN {
   $Dist::Zilla::Role::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
 {
-  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.002';
+  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.003';
 }
-# git description: v0.001-3-gd235b22
+# git description: v0.002-2-g91a04e5
 
 use Moose::Role;
 use IPC::Open2;
@@ -119,7 +119,7 @@ Dist::Zilla::Plugin::Chrome::ExtraPrompt - Perform arbitrary commands when Dist:
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
