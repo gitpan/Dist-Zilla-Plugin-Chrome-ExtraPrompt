@@ -5,9 +5,9 @@ BEGIN {
   $Dist::Zilla::Plugin::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
 {
-  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.003';
+  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.004';
 }
-# git description: v0.002-2-g91a04e5
+# git description: v0.003-3-g2a05462
 
 # ABSTRACT: Perform arbitrary commands when Dist::Zilla prompts you
 # vim: set ts=8 sw=4 tw=78 et :
@@ -53,7 +53,7 @@ around register_component => sub
         $chrome->repeat_prompt($payload->{repeat_prompt});
     }
 
-    # WE DO NOT CALL ORIG - we will blow up (no zilla, etc)
+    # WE DO NOT CALL $orig - we will blow up (no zilla, etc)
 };
 __PACKAGE__->meta->make_immutable;
 
@@ -63,9 +63,9 @@ BEGIN {
   $Dist::Zilla::Role::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
 {
-  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.003';
+  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.004';
 }
-# git description: v0.002-2-g91a04e5
+# git description: v0.003-3-g2a05462
 
 use Moose::Role;
 use IPC::Open2;
@@ -74,6 +74,8 @@ use namespace::autoclean;
 
 has command => (
     is => 'rw', isa => 'Str',
+    # no point in saying 'required => 1' - the object is already instantiated
+    # by the time we apply our role to it
 );
 has repeat_prompt => (
     is => 'rw', isa => 'Bool',
@@ -119,14 +121,15 @@ Dist::Zilla::Plugin::Chrome::ExtraPrompt - Perform arbitrary commands when Dist:
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
-In your F<~/.dzil/config.ini> (I<NOT> F<dist.ini>):
+In your F<~/.dzil/config.ini> (B<NOT> F<dist.ini>):
 
     [Chrome::ExtraPrompt]
-    command = say Dist zilla would like your attention
+    command = say Dist zilla would like your attention.
+    repeat_prompt = 1
 
 =head1 DESCRIPTION
 
@@ -135,8 +138,8 @@ F<~/.dzil/config.ini>, which affects the behaviour of prompts within
 L<Dist::Zilla> commands. When you are prompted, the specified command is run;
 it is killed when you provide prompt input.
 
-I have mine configured to use the C<say> command on OS X, which provides an
-audio prompt to bring me back to this screen session.
+I have mine configured as in the synopsis, which uses the C<say> command on
+OS X to provide an audio prompt to bring me back to this screen session.
 
 =head1 CONFIGURATION OPTIONS
 

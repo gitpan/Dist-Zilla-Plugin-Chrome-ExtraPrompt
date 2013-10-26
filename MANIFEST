@@ -8,6 +8,7 @@ META.json
 META.yml
 Makefile.PL
 README
+README.md
 dist.ini
 lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm
 t/00-report-prereqs.t
