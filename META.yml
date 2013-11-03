@@ -34,10 +34,10 @@ no_index:
 provides:
   Dist::Zilla::Plugin::Chrome::ExtraPrompt:
     file: lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm
-    version: 0.005
+    version: 0.006
   Dist::Zilla::Role::Chrome::ExtraPrompt:
     file: lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm
-    version: 0.005
+    version: 0.006
 requires:
   Dist::Zilla::Chrome::Term: 0
   Dist::Zilla::Role::Plugin: 0
@@ -53,7 +53,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-Chrome-ExtraPrompt
   homepage: https://github.com/karenetheridge/Dist-Zilla-Plugin-Chrome-ExtraPrompt
   repository: https://github.com/karenetheridge/Dist-Zilla-Plugin-Chrome-ExtraPrompt.git
-version: 0.005
+version: 0.006
 x_Dist_Zilla:
   perl:
     version: 5.019005

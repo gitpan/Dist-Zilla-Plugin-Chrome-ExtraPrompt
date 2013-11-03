@@ -92,11 +92,11 @@
    "provides" : {
       "Dist::Zilla::Plugin::Chrome::ExtraPrompt" : {
          "file" : "lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm",
-         "version" : "0.005"
+         "version" : "0.006"
       },
       "Dist::Zilla::Role::Chrome::ExtraPrompt" : {
          "file" : "lib/Dist/Zilla/Plugin/Chrome/ExtraPrompt.pm",
-         "version" : "0.005"
+         "version" : "0.006"
       }
    },
    "release_status" : "stable",
@@ -112,7 +112,7 @@
          "web" : "https://github.com/karenetheridge/Dist-Zilla-Plugin-Chrome-ExtraPrompt"
       }
    },
-   "version" : "0.005",
+   "version" : "0.006",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019005"

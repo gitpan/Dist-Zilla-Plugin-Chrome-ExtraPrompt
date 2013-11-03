@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::Chrome::ExtraPrompt;
 {
-  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.005';
+  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.006';
 }
-# git description: v0.004-4-gcf71425
+# git description: v0.005-1-g6e3387f
 
 BEGIN {
   $Dist::Zilla::Plugin::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
@@ -60,9 +60,9 @@ __PACKAGE__->meta->make_immutable;
 
 package Dist::Zilla::Role::Chrome::ExtraPrompt;
 {
-  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.005';
+  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.006';
 }
-# git description: v0.004-4-gcf71425
+# git description: v0.005-1-g6e3387f
 
 BEGIN {
   $Dist::Zilla::Role::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
@@ -95,7 +95,7 @@ around [qw(prompt_str prompt_yn)] => sub {
     open(my $out, '>', File::Spec->devnull);
 
     my $command = $self->command;
-    $command .= ' ' . "'" . $_[0] . "'" if $self->repeat_prompt;
+    $command .= ' ' . '"' . $_[0] . '"' if $self->repeat_prompt;
 
     my $pid = open2($out, $in, $command);
 
@@ -121,7 +121,7 @@ Dist::Zilla::Plugin::Chrome::ExtraPrompt - Perform arbitrary commands when Dist:
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 

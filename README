@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution Dist-Zilla-Plugin-Chrome-ExtraPrompt,
-version 0.005:
+version 0.006:
 
   Perform arbitrary commands when Dist::Zilla prompts you
 
