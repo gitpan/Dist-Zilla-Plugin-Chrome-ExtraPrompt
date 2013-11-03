@@ -1,14 +1,14 @@
 use strict;
 use warnings;
 package Dist::Zilla::Plugin::Chrome::ExtraPrompt;
+{
+  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.005';
+}
+# git description: v0.004-4-gcf71425
+
 BEGIN {
   $Dist::Zilla::Plugin::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
-{
-  $Dist::Zilla::Plugin::Chrome::ExtraPrompt::VERSION = '0.004';
-}
-# git description: v0.003-3-g2a05462
-
 # ABSTRACT: Perform arbitrary commands when Dist::Zilla prompts you
 # vim: set ts=8 sw=4 tw=78 et :
 
@@ -59,14 +59,14 @@ __PACKAGE__->meta->make_immutable;
 
 
 package Dist::Zilla::Role::Chrome::ExtraPrompt;
+{
+  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.005';
+}
+# git description: v0.004-4-gcf71425
+
 BEGIN {
   $Dist::Zilla::Role::Chrome::ExtraPrompt::AUTHORITY = 'cpan:ETHER';
 }
-{
-  $Dist::Zilla::Role::Chrome::ExtraPrompt::VERSION = '0.004';
-}
-# git description: v0.003-3-g2a05462
-
 use Moose::Role;
 use IPC::Open2;
 use File::Spec;
@@ -121,7 +121,7 @@ Dist::Zilla::Plugin::Chrome::ExtraPrompt - Perform arbitrary commands when Dist:
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 

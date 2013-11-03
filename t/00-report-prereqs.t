@@ -23,6 +23,7 @@ my @modules = qw(
   ExtUtils::MakeMaker
   File::Spec
   File::Spec::Functions
+  File::Temp
   IPC::Open2
   List::Util
   Module::Build::Tiny
@@ -32,7 +33,6 @@ my @modules = qw(
   Test::DZil
   Test::Fatal
   Test::More
-  Test::TempDir
   if
   namespace::autoclean
   perl

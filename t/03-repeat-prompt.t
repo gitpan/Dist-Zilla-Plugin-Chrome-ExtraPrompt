@@ -6,7 +6,7 @@ use if $ENV{AUTHOR_TESTING}, 'Test::Warnings';
 use Test::DZil;
 use Test::Fatal;
 use Path::Tiny;
-use Test::TempDir 'temp_root';
+use File::Temp 'tempdir';
 
 # most of this file is copied from t/01-basic.t
 
@@ -16,7 +16,7 @@ use Test::TempDir 'temp_root';
     $meta->make_mutable;
     $meta->add_around_method_modifier(
         prompt_yn => sub {
-            sleep 1;    # time for signal to reach us
+            sleep 1;    # allow time for the file to be written
             # avoid calling real term ui
         },
     );
@@ -37,14 +37,16 @@ use Test::TempDir 'temp_root';
 # chrome that was received from setup_global_config -- because the test
 # builder actually unconditionally overwrites it with a ::Chrome::Test.
 
-my $tempdir = path(temp_root)->absolute;
+my $tempdir = tempdir(CLEANUP => 1);
 my $promptfile = path($tempdir, 'gotprompt');
 
-path($tempdir, 'config.ini')->spew(<<CONFIG);
+my $config_ini = <<'CONFIG';
 [Chrome::ExtraPrompt]
-command = $^X -MPath::Tiny -e"path(q[$promptfile])->spew(\\\$ARGV[0])"
+command = %s -MPath::Tiny -e"path(q[%s])->spew(@ARGV)"
 repeat_prompt = 1
 CONFIG
+
+path($tempdir, 'config.ini')->spew(sprintf($config_ini, $^X, $promptfile));
 
 my $chrome = Dist::Zilla::Chrome::Term->new;
 

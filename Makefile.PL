@@ -87,15 +87,15 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Role::BeforeBuild" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec::Functions" => 0,
+    "File::Temp" => 0,
     "List::Util" => 0,
     "Path::Tiny" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::More" => 0,
-    "Test::TempDir" => 0,
     "if" => 0
   },
-  "VERSION" => "0.004",
+  "VERSION" => "0.005",
   "test" => {
     "TESTS" => "t/*.t"
   }
